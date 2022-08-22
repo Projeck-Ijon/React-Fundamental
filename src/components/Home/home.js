@@ -8,10 +8,10 @@ const Home = () => {
         <div
           style={{
             backgroundColor: "#5F9EA0",
-            fontSize: "40px",
+            fontSize: "30px",
 
             width: "100%",
-            height: "620px",
+            height: "500px",
             marginTop: "30px",
             padding: "20px",
             boxShadow: "20PX 25PX 10PX -5px rgba(0, 0, 0, 0.8)",

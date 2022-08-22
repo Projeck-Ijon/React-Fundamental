@@ -53,7 +53,7 @@ const Collection = () => {
         {datas.map((data, i) => {
           return (
             <Carousel.Item id="wewe" key={i}>
-              <img id="id_img" className="d-block w-100" src={data.url} alt="First slide" height={600} width={600} />
+              <img id="id_img" className="d-block w-100" src={data.url} alt="First slide" height={450} width={450} />
 
               <Carousel.Caption>
                 <h3>{data.title}</h3>

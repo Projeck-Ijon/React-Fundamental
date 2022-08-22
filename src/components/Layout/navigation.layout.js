@@ -18,7 +18,7 @@ const Navigation = () => {
               })}
               className="me-3"
             >
-              <h4> Home </h4>
+              <h6>Home</h6>
             </NavLink>
             <NavLink
               to="/albums"
@@ -29,7 +29,7 @@ const Navigation = () => {
               })}
               className="me-3"
             >
-              <h4>Albums</h4>
+              <h6>Albums</h6>
             </NavLink>
 
             <NavLink
@@ -41,7 +41,7 @@ const Navigation = () => {
               })}
               className="me-3"
             >
-              <h4> Post </h4>
+              <h6> Post </h6>
             </NavLink>
           </Nav>
         </Container>
