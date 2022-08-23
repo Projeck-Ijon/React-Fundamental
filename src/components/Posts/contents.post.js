@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Button, ButtonGroup, Container } from "react-bootstrap";
-import { Card } from "react-bootstrap";
+import Alert from "react-bootstrap/Alert";
 
 import { Modal } from "react-bootstrap";
 import Loaders from "../Utilities/loaders";
@@ -43,6 +43,10 @@ const Contents = () => {
   return (
     <React.Fragment>
       <Container style={{ marginBottom: "80px" }}>
+        <Alert variant="success" style={{ boxShadow: "5PX 5PX 10PX 0px rgba(0, 0, 0, 0.8)" }}>
+          <Alert.Heading>API POST</Alert.Heading>
+          Currently showing {limit} posts
+        </Alert>
         {/* <h1>{isiModal.title}</h1> */}
         {postss.map((data, i) => {
           return (
@@ -51,7 +55,7 @@ const Contents = () => {
                 style={{
                   color: "primary",
                   width: "100%",
-                  marginTop: "30px",
+                  marginBottom: "30px",
                   boxShadow: "10PX 15PX 10PX 0px rgba(0, 0, 0, 0.8)",
                 }}
                 onClick={() => {
@@ -59,7 +63,7 @@ const Contents = () => {
                   setShow(true);
                 }}
               >
-                <h2>{data.title}</h2>
+                <h5>{data.title}</h5>
               </Button>
             </div>
           );
