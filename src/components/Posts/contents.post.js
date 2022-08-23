@@ -48,26 +48,28 @@ const Contents = () => {
           Currently showing {limit} posts
         </Alert>
         {/* <h1>{isiModal.title}</h1> */}
-        {postss.map((data, i) => {
-          return (
-            <div key={i}>
-              <Button
-                style={{
-                  color: "primary",
-                  width: "100%",
-                  marginBottom: "30px",
-                  boxShadow: "10PX 15PX 10PX 0px rgba(0, 0, 0, 0.8)",
-                }}
-                onClick={() => {
-                  setModal(data);
-                  setShow(true);
-                }}
-              >
-                <h5>{data.title}</h5>
-              </Button>
-            </div>
-          );
-        })}
+        <div style={{ width: "100%", height: "400px", overflow: "scroll" }}>
+          {postss.map((data, i) => {
+            return (
+              <div key={i}>
+                <Button
+                  style={{
+                    color: "primary",
+                    width: "100%",
+                    marginBottom: "30px",
+                    boxShadow: "10PX 15PX 10PX 0px rgba(0, 0, 0, 0.8)",
+                  }}
+                  onClick={() => {
+                    setModal(data);
+                    setShow(true);
+                  }}
+                >
+                  <h5>{data.title}</h5>
+                </Button>
+              </div>
+            );
+          })}
+        </div>
         <Modal show={shows} onHide={handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>
@@ -86,9 +88,8 @@ const Contents = () => {
             </h6>
           </Modal.Body>
         </Modal>
-      </Container>
-      <div style={{ position: "fixed", left: "0", bottom: "0", textAlign: "center", backgroundColor: " #e6e6fa", width: "100%", height: "59px" }}>
-        <ButtonGroup className="mt-1">
+
+        <ButtonGroup style={{ position: "fixed", left: "550px" }}>
           <Button variant="dark" size="lg" onClick={() => setUpButton("+")}>
             Tambah
           </Button>
@@ -98,7 +99,7 @@ const Contents = () => {
             </Button>
           )}
         </ButtonGroup>
-      </div>
+      </Container>
     </React.Fragment>
   );
 };
