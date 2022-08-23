@@ -26,7 +26,10 @@ const Home = () => {
           <p> 5. Membuat UI Kreatifitas Masing-Masing</p>
           <br />
           <p>
-            Sumber API : <a href="https://jsonplaceholder.typicode.com/photos">https://jsonplaceholder.typicode.com</a>
+            Sumber API :{" "}
+            <a href="https://jsonplaceholder.typicode.com/photos" target="_blank">
+              https://jsonplaceholder.typicode.com
+            </a>
           </p>
         </div>
       </Container>
