@@ -70,24 +70,26 @@ const Contents = () => {
             );
           })}
         </div>
-        <Modal show={shows} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>
-              <h3>ID : {isiModal.id}</h3>
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <h6>TITLE : {isiModal.title}</h6>
+        <div>
+          <Modal show={shows} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>
+                <h3>ID : {isiModal.id}</h3>
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <h6>TITLE : {isiModal.title}</h6>
 
-            <h6>
-              {" "}
-              URL :{" "}
-              <a href={isiModal.url} target="_blank">
-                {isiModal.url}
-              </a>
-            </h6>
-          </Modal.Body>
-        </Modal>
+              <h6>
+                {" "}
+                URL :{" "}
+                <a href={isiModal.url} target="_blank">
+                  {isiModal.url}
+                </a>
+              </h6>
+            </Modal.Body>
+          </Modal>
+        </div>
 
         <ButtonGroup style={{ position: "fixed", left: "550px" }}>
           <Button variant="dark" size="lg" onClick={() => setUpButton("+")}>

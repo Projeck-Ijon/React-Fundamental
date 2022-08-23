@@ -1,6 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import { MDBIcon } from "mdb-react-ui-kit";
+import { faCircleExclamation, faCheck } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Home = () => {
   return (
     <React.Fragment>
@@ -19,11 +20,25 @@ const Home = () => {
         >
           <p style={{ fontWeight: "bold", textDecoration: "underline" }}>Tugas Dea Cource</p>
 
-          <p>1. Routing URL post dengan isian api POST </p>
-          <p> 2. Modifikasi UI Homepage</p>
-          <p> 3. Membuat Active Navigation Bar </p>
-          <p> 4. Membuat modal popup dari API POST</p>
-          <p> 5. Membuat UI Kreatifitas Masing-Masing</p>
+          <p>
+            1. Routing URL post dengan isian api POST <FontAwesomeIcon icon={faCheck} className="ms-2 text-success" />{" "}
+          </p>
+          <p>
+            {" "}
+            2. Modifikasi UI Homepage <FontAwesomeIcon icon={faCheck} className="ms-2 text-success" />
+          </p>
+          <p>
+            {" "}
+            3. Membuat Active Navigation Bar <FontAwesomeIcon icon={faCheck} className="ms-2 text-success" />{" "}
+          </p>
+          <p>
+            {" "}
+            4. Membuat modal popup dari API POST <FontAwesomeIcon icon={faCheck} className="ms-2 text-success" />
+          </p>
+          <p>
+            {" "}
+            5. Membuat UI Kreatifitas Masing-Masing <FontAwesomeIcon icon={faCheck} className="ms-2 text-success" />
+          </p>
           <br />
           <p>
             Sumber API :{" "}
