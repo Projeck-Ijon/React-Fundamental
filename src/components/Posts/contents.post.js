@@ -71,22 +71,22 @@ const Contents = () => {
           })}
         </div>
         <div>
-          <Modal show={shows} onHide={handleClose}>
+          <Modal show={shows} onHide={handleClose} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
             <Modal.Header closeButton>
               <Modal.Title>
                 <h3>ID : {isiModal.id}</h3>
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <h6>TITLE : {isiModal.title}</h6>
+              <h4>TITLE : {isiModal.title}</h4>
 
-              <h6>
+              <h4>
                 {" "}
                 URL :{" "}
                 <a href={isiModal.url} target="_blank">
                   {isiModal.url}
                 </a>
-              </h6>
+              </h4>
             </Modal.Body>
           </Modal>
         </div>
