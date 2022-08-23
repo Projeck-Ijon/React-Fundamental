@@ -61,18 +61,21 @@ const Contents = () => {
         })}
         <Modal show={shows} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>ID :{isiModal.id}</Modal.Title>
+            <Modal.Title>
+              <h3>ID : {isiModal.id}</h3>
+            </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            TITLE : {isiModal.title}
-            <br />
-            URL : {isiModal.url}
+            <h6>TITLE : {isiModal.title}</h6>
+
+            <h6>
+              {" "}
+              URL :{" "}
+              <a href={isiModal.url} target="_blank">
+                {isiModal.url}
+              </a>
+            </h6>
           </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-          </Modal.Footer>
         </Modal>
       </Container>
     </React.Fragment>
