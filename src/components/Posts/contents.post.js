@@ -43,7 +43,7 @@ const Contents = () => {
   return (
     <React.Fragment>
       <Container style={{ marginBottom: "80px" }}>
-        <Alert variant="success" style={{ boxShadow: "5PX 5PX 10PX 0px rgba(0, 0, 0, 0.8)" }}>
+        <Alert variant="success">
           <Alert.Heading>API POST</Alert.Heading>
           Currently showing {limit} posts
         </Alert>
