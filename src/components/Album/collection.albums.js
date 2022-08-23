@@ -68,17 +68,18 @@ const Collection = () => {
       <ButtonGroup
         className="d-flex justufy-content-center align-items-center"
         style={{
-          marginTop: "20px",
+          marginTop: "25px",
           backgroundColor: "#6fa8dc",
           boxShadow: "10PX 15PX 10PX 0px rgba(0, 0, 0, 0.8)",
+          fontWeight: "bold",
         }}
       >
         <Button variant="outline-primary" onClickCapture={() => handleLimit("+")}>
-          +
+          <h5>+</h5>
         </Button>
         {limit > 1 && (
           <Button variant="outline-primary" onClick={() => handleLimit("-")}>
-            -
+            <h5>-</h5>
           </Button>
         )}
       </ButtonGroup>
