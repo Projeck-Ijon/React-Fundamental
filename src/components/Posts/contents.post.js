@@ -4,6 +4,7 @@ import { Button, ButtonGroup, Container } from "react-bootstrap";
 import { Card } from "react-bootstrap";
 
 import { Modal } from "react-bootstrap";
+import Loaders from "../Utilities/loaders";
 
 // import PopUp from "./popup.post";
 
@@ -11,33 +12,37 @@ const Contents = () => {
   const [postss, setPost] = useState([]);
   const [limit, setLimit] = useState(3);
   const [isiModal, setModal] = useState({});
+  const [loading, setLoading] = useState(true);
 
   const [shows, setShow] = useState(false);
   const handleClose = () => setShow(false);
 
   useEffect(() => {
-    axios({
-      method: "GET",
-      url: `${process.env.REACT_APP_BASEURL}/photos?_limit=${limit}`,
-    }).then((result) => setPost(result.data));
+    let isCancelled = false;
+    if (isCancelled === false) {
+      setLoading(true);
+      axios({
+        method: "GET",
+        url: `${process.env.REACT_APP_BASEURL}/photos?_limit=${limit}`,
+      })
+        .then((result) => setPost(result.data))
+        .catch((err) => console.log(err))
+        .finally(() => setLoading(false));
+    }
+    return () => {
+      isCancelled = true;
+    };
   }, [limit]);
 
   const setUpButton = (a) => {
     a === "+" ? setLimit((prev) => prev + 1) : setLimit((prev) => prev - 1);
   };
 
+  if (loading) return <Loaders />;
+
   return (
     <React.Fragment>
-      <Container>
-        <Button style={{ marginLeft: "10px", boxShadow: "10PX 15PX 10PX 0px rgba(0, 0, 0, 0.8)" }} variant="success" size="lg" onClick={() => setUpButton("+")}>
-          Tambah
-        </Button>
-        {limit > 1 && (
-          <Button style={{ marginLeft: "10px", boxShadow: "10PX 15PX 10PX 0px rgba(0, 0, 0, 0.8)" }} variant="success" size="lg" onClick={() => setUpButton("-")}>
-            Kurang
-          </Button>
-        )}
-
+      <Container style={{ marginBottom: "80px" }}>
         {/* <h1>{isiModal.title}</h1> */}
         {postss.map((data, i) => {
           return (
@@ -78,6 +83,18 @@ const Contents = () => {
           </Modal.Body>
         </Modal>
       </Container>
+      <div style={{ position: "fixed", left: "0", bottom: "0", textAlign: "center", backgroundColor: " #e6e6fa", width: "100%", height: "59px" }}>
+        <ButtonGroup className="mt-1">
+          <Button variant="dark" size="lg" onClick={() => setUpButton("+")}>
+            Tambah
+          </Button>
+          {limit > 1 && (
+            <Button style={{ marginLeft: "10px" }} variant="dark" size="lg" onClick={() => setUpButton("-")}>
+              Kurang
+            </Button>
+          )}
+        </ButtonGroup>
+      </div>
     </React.Fragment>
   );
 };
