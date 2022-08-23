@@ -91,7 +91,7 @@ const Contents = () => {
           </Modal>
         </div>
 
-        <ButtonGroup style={{ position: "fixed", left: "550px" }}>
+        <ButtonGroup className="d-flex text-align-center">
           <Button variant="dark" size="lg" onClick={() => setUpButton("+")}>
             Tambah
           </Button>
